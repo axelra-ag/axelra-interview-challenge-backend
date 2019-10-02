@@ -7,12 +7,12 @@ Don't forget to install Docker, if not yet installed.
 
 3. create an .env file like the following one:
     ```
-    export AWS_PROFILE=default
-    export ARTIFACT_STORE=axelra-test-artifact-store
-    export CLOUDFORMATION_NAME=axelra-test
-    export ENVIRONMENT=dev
-    export API_HOST=google.com
-    export API_PORT=8080
+   export AWS_PROFILE=default
+   export ARTIFACT_STORE=axelra-interview-challenge-artifact-store
+   export CLOUDFORMATION_NAME=axelra-interview-challenge
+   export ENVIRONMENT=dev
+   export API_HOST=google.com
+   export API_PORT=8080
     ```
 
 ## Run the Backend locally
@@ -35,8 +35,8 @@ Important: Docker needs to be running.
 1. Make sure the `.env` file exists:
     ```
    export AWS_PROFILE=default
-   export ARTIFACT_STORE=axelra-test-artifact-store
-   export CLOUDFORMATION_NAME=axelra-test
+   export ARTIFACT_STORE=axelra-interview-challenge-artifact-store
+   export CLOUDFORMATION_NAME=axelra-interview-challenge
    export ENVIRONMENT=dev
    export API_HOST=google.com
    export API_PORT=8080
