@@ -23,7 +23,7 @@ Resources:
   TestApiGateway:
     Type: AWS::Serverless::Api
     Properties:
-      Name: "axelra-test-api"
+      Name: "axelra-interview-challenge-api"
       StageName: !Ref Environment
 #      Cors:
 #        AllowMethods: "'OPTIONS,GET,POST,PUT,DELETE'"
