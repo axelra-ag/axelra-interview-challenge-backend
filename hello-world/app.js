@@ -13,7 +13,11 @@ exports.lambdaHandler = async event => {
       )
       .then(result => {
         if (result.success)
-          return responseHandler(true, "Hello World. The connection was successful.", 200);
+          return responseHandler(
+            true,
+            "Hello World. The connection was successful.",
+            200
+          );
         else {
           console.log("Response:", result);
           return responseHandler(false, result.error, 400);

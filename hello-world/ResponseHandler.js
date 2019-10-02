@@ -7,8 +7,7 @@ const headers = {
 };
 const responseHandler = (success, data, code) => {
   let body;
-  if (success)
-    body = { success: success, data: data };
+  if (success) body = { success: success, data: data };
   else {
     // make sure error object has a message field
     if (data && data.message) body = { success: success, error: data };
