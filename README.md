@@ -15,12 +15,12 @@ Don't forget to install Docker, if not yet installed.
    export API_PORT=80
     ```
 
-## Run the Backend locally
+## Run the backend locally
 Install node modules with. It will start a recursive install for every subfolder.
 
 *AWS microservice currently work best (if not "only") with npm. So use npm instead of yarn to avoid conflicts.*
 
-####`npm install`
+#### `npm install`
 
 Important: Docker needs to be running.
 
@@ -44,14 +44,15 @@ Important: Docker needs to be running.
     
     If you haven't specified an AWS profile keep this env variable on 'default'.
     
-2. add aws credentials to `~/.aws/credentials`
-3. add region and default to `~/.aws/config`
+2. Create an AWS account if you don't have one yet.
+3. Add aws credentials to `~/.aws/credentials`
+4. Add region and default output to `~/.aws/config`
     
-4. Open the AWS console and create a S3 Bucket artifact store
-    
-    Choose the name axelra-test-artifact-store, if you don't want to adjust the .env file above.
+5. Open the AWS console and create an S3 Bucket artifact store. Choose the name `axelra-test-artifact-store`, if you don't want to adjust the .env file above.
      
-5. On MacOS/Linux:
+6. Build and deploy the cloudformation
+
+    On MacOS/Linux:
     
     #### `npm run build-deploy`
     
@@ -59,7 +60,7 @@ Important: Docker needs to be running.
     
     #### `./build_and_deploy.sh`
     
-    The template is built and the Cloudformation Stacks is deployed to AWS.
+    The template is packaged and the Cloudformation Stack is deployed to AWS.
 
 ## Other information
 
