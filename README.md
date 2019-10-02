@@ -18,6 +18,8 @@ Don't forget to install Docker, if not yet installed.
 ## Run the Backend locally
 Install node modules with. It will start a recursive install for every subfolder.
 
+*AWS microservice currently work best (if not "only") with npm. So use npm instead of yarn to avoid conflicts.*
+
 ####`npm install`
 
 Important: Docker needs to be running.
