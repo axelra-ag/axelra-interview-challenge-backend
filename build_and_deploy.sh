@@ -17,3 +17,4 @@ aws --profile $AWS_PROFILE cloudformation deploy \
   Environment=$ENVIRONMENT \
   ApiHost=$API_HOST \
   ApiPort=$API_PORT
+  MongoDB=$MONGO_DB
