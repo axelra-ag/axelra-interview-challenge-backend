@@ -13,6 +13,7 @@ Don't forget to install Docker, if not yet installed.
    export ENVIRONMENT=dev
    export API_HOST=google.com
    export API_PORT=80
+   export MONGO_DB="<The mongoDB connection string which you received by Axelra>"
     ```
 
 ## Run the backend locally
@@ -40,6 +41,7 @@ Important: Docker needs to be running.
    export ENVIRONMENT=dev
    export API_HOST=google.com
    export API_PORT=80
+   export MONGO_DB="<The mongoDB connection string which you received by Axelra>"
     ```
     
     If you haven't specified an AWS profile keep this env variable on 'default'.
