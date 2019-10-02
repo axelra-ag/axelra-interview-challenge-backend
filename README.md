@@ -12,7 +12,7 @@ Don't forget to install Docker, if not yet installed.
    export CLOUDFORMATION_NAME=axelra-interview-challenge
    export ENVIRONMENT=dev
    export API_HOST=google.com
-   export API_PORT=8080
+   export API_PORT=80
     ```
 
 ## Run the Backend locally
@@ -39,7 +39,7 @@ Important: Docker needs to be running.
    export CLOUDFORMATION_NAME=axelra-interview-challenge
    export ENVIRONMENT=dev
    export API_HOST=google.com
-   export API_PORT=8080
+   export API_PORT=80
     ```
     
     If you haven't specified an AWS profile keep this env variable on 'default'.
