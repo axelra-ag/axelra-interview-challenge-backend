@@ -1,4 +1,11 @@
+# Axelra Challenge
+![](https://files.axelra.com/logo.png)
 
+## Task description
+
+The task description can be found here: [github.com/axelra-ag/axelra-interview-challenge-frontend](https://github.com/axelra-ag/axelra-interview-challenge-frontend)
+
+# Installation Guidelines
 ## Setup the local development environment
 
 1. Install AWS CLI
