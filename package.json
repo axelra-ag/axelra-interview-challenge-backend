@@ -4,7 +4,7 @@
   "author": "Axelra AG",
   "scripts": {
     "postinstall": "npm-recursive-install --skip-root",
-    "dev": "source .env && sam local start-api --port 3001 --template apigateway_template.yaml --parameter-overrides \"ParameterKey=Environment,ParameterValue=$ENVIRONMENT ParameterKey=ApiHost,ParameterValue=$API_HOST ParameterKey=ApiPort,ParameterValue=$API_PORT ParameterKey=MongoDB,ParameterValue=$MONGO_DB\"",
+    "dev": ". ./.env && sam local start-api --port 3001 --template apigateway_template.yaml --parameter-overrides \"ParameterKey=Environment,ParameterValue=$ENVIRONMENT ParameterKey=ApiHost,ParameterValue=$API_HOST ParameterKey=ApiPort,ParameterValue=$API_PORT ParameterKey=MongoDB,ParameterValue=$MONGO_DB\"",
     "dev-windows": "sam local start-api --port 3001 --template apigateway_template.yaml --parameter-overrides \"ParameterKey=Environment,ParameterValue=%ENVIRONMENT% ParameterKey=ApiHost,ParameterValue=%API_HOST% ParameterKey=ApiPort,ParameterValue=%API_PORT% ParameterKey=MongoDB,ParameterValue=%MONGO_DB%\"",
     "build-deploy": "sh build_and_deploy.sh"
   },
