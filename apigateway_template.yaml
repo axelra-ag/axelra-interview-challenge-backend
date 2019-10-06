@@ -72,6 +72,26 @@ Resources:
             Method: get
             RestApiId: !Ref TestApiGateway
 
+  AddTodo:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: addtodo/
+      Handler: app.lambdaHandler
+      Runtime: nodejs8.10
+      Timeout: 10
+      Environment:
+        Variables:
+          API_HOST: !Ref ApiHost
+          API_PORT: !Ref ApiPort
+          MONGO_DB: !Ref MongoDB
+      Events:
+        GetRequest:
+          Type: Api
+          Properties:
+            Path: /addtodo
+            Method: post
+            RestApiId: !Ref TestApiGateway
+
   # this function is used for cors problems. it is triggered on all OPTIONS calls
   OptionsFunction:
     Type: AWS::Serverless::Function
