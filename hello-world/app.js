@@ -30,31 +30,19 @@ exports.lambdaHandler = async event => {
     db = await getDB();
     if (!db) return responseHandler(false, "Could not connect to db.", 500);
 
-    let dbQueryResult = await db
+    return await db
       .collection("exampletable")
       .find({})
-      .toArray();
-
-    return await util
-      .promisify(connectionTester.test)(
-        process.env.API_HOST,
-        process.env.API_PORT,
-        8000
-      )
+      .toArray()
       .then(result => {
-        if (result.success)
-          return responseHandler(
-            true,
-            {
-              message: "Hello World. The connection was successful.",
-              dbQueryResult
-            },
-            200
-          );
-        else {
-          console.log("Response:", result);
-          return responseHandler(false, result.error, 400);
-        }
+        return responseHandler(
+          true,
+          {
+            message: "Hello World!",
+            queryResult: result
+          },
+          200
+        );
       })
       .catch(error => {
         console.log("Error:", error);
@@ -62,7 +50,6 @@ exports.lambdaHandler = async event => {
       });
   } catch (err) {
     console.log("Error:", err);
-
     return responseHandler(false, err, err.statusCode);
   }
 };
