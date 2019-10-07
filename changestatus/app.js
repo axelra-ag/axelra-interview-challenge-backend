@@ -30,9 +30,18 @@ exports.lambdaHandler = async event => {
     db = await getDB();
     if (!db) return responseHandler(false, "Could not connect to db.", 500);
 
+    let doc = await db
+      .collection("alltodos")
+      .findOne({ _id: new mongodb.ObjectID(event.body) })
+
     let dbQueryResult = await db
       .collection("alltodos")
-      .deleteOne({ _id: new mongodb.ObjectID(event.body) })
+      .updateOne(
+        { _id: new mongodb.ObjectID(event.body) },
+        {
+          $set:
+            { completed: !doc.completed }
+        })
 
     return await util
       .promisify(connectionTester.test)(

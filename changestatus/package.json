@@ -1,7 +1,7 @@
 {
-  "name": "deletetodo",
+  "name": "changestatus",
   "version": "1.0.0",
-  "description": "Delete Todo from Database",
+  "description": "Change Completed-Status on Todo",
   "main": "app.js",
   "author": "manuelgr",
   "dependencies": {
