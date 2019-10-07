@@ -7,7 +7,6 @@
   "author": "SAM CLI",
   "license": "MIT",
   "dependencies": {
-    "connection-tester": "^0.2.0",
     "mongodb": "^3.3.2"
   }
 }

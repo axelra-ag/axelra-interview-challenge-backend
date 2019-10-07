@@ -1,7 +1,4 @@
 const { responseHandler } = require("./ResponseHandler.js");
-
-const connectionTester = require("connection-tester");
-const util = require("util");
 const mongodb = require("mongodb");
 
 let db;
