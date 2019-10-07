@@ -1,0 +1,11 @@
+{
+  "name": "addtodo",
+  "version": "1.0.0",
+  "description": "Add Todo to Database",
+  "main": "app.js",
+  "author": "manuelgr",
+  "dependencies": {
+    "connection-tester": "^0.2.0",
+    "mongodb": "^3.3.2"
+  }
+}

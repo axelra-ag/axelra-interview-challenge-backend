@@ -25,7 +25,7 @@ Resources:
   TestApiGateway:
     Type: AWS::Serverless::Api
     Properties:
-      Name: "axelra-interview-challenge-api"
+      Name: "axelrachallenge"
       StageName: !Ref Environment
 #      Cors:
 #        AllowMethods: "'OPTIONS,GET,POST,PUT,DELETE'"
@@ -50,6 +50,86 @@ Resources:
           Properties:
             Path: /hello
             Method: get
+            RestApiId: !Ref TestApiGateway
+
+  GetAllTodos:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: getalltodos/
+      Handler: app.lambdaHandler
+      Runtime: nodejs8.10
+      Timeout: 10
+      Environment:
+        Variables:
+          API_HOST: !Ref ApiHost
+          API_PORT: !Ref ApiPort
+          MONGO_DB: !Ref MongoDB
+      Events:
+        GetRequest:
+          Type: Api
+          Properties:
+            Path: /getalltodos
+            Method: get
+            RestApiId: !Ref TestApiGateway
+
+  AddTodo:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: addtodo/
+      Handler: app.lambdaHandler
+      Runtime: nodejs8.10
+      Timeout: 10
+      Environment:
+        Variables:
+          API_HOST: !Ref ApiHost
+          API_PORT: !Ref ApiPort
+          MONGO_DB: !Ref MongoDB
+      Events:
+        GetRequest:
+          Type: Api
+          Properties:
+            Path: /addtodo
+            Method: post
+            RestApiId: !Ref TestApiGateway
+
+  DeleteTodo:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: deletetodo/
+      Handler: app.lambdaHandler
+      Runtime: nodejs8.10
+      Timeout: 10
+      Environment:
+        Variables:
+          API_HOST: !Ref ApiHost
+          API_PORT: !Ref ApiPort
+          MONGO_DB: !Ref MongoDB
+      Events:
+        GetRequest:
+          Type: Api
+          Properties:
+            Path: /deletetodo
+            Method: delete
+            RestApiId: !Ref TestApiGateway
+
+  ChangeStatus:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: changestatus/
+      Handler: app.lambdaHandler
+      Runtime: nodejs8.10
+      Timeout: 10
+      Environment:
+        Variables:
+          API_HOST: !Ref ApiHost
+          API_PORT: !Ref ApiPort
+          MONGO_DB: !Ref MongoDB
+      Events:
+        GetRequest:
+          Type: Api
+          Properties:
+            Path: /changestatus
+            Method: put
             RestApiId: !Ref TestApiGateway
 
   # this function is used for cors problems. it is triggered on all OPTIONS calls
